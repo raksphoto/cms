@@ -11,13 +11,14 @@ def cents_to_ratio(x: float) -> float:
 
 def log_weights_by_cents():
     sstr, cstr = "semitone".rjust(8), "cents".rjust(7)
-    fstr = "f-ratio".rjust(11)
+    fstr = "f-ratio".rjust(17)
     work = sstr + cstr + fstr
     print(work)
-    for semitone in range(128):
-        cents = semitone * 100
+    for semi in range(1, 128):
+        cents = semi * 100
         freqs = cents_to_ratio(cents)
-        print("{:8.0f} {:6.0f} {:10.4f}".format(semitone, cents, freqs))
+        fstr = "{:8.0f} {:6.0f} {:16.10f}".format(semi, cents, freqs)
+        print(fstr)
 
 
 def testbench():
