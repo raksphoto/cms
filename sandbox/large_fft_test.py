@@ -17,9 +17,9 @@ if __name__ == "__main__":
     # compute fft of the tone for samp_in_1s records
     spectrum = np.fft.fft(samp_dat)
     freq = np.fft.fftfreq(samp_seq.shape[-1], d=sp)
-    
+
     print(samp_seq.shape[-1])
-    
+
     # plot results, with some formatting for audio signals
     plt.xlabel("frequency")
     plt.ylabel("amplitude")
